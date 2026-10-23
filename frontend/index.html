@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>タスク管理</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header>
+    <div class="logo">タスク<span>管理</span></div>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h1>目標を行動に変える。</h1>
+      <p>
+        目標を定めて、AIに細かなタスクへの分解を手伝ってもらいましょう。
+      </p>
+    </section>
+
+    <section class="panel">
+      <label for="goalInput">目的を入力</label>
+
+      <input
+        id="goalInput"
+        type="text"
+      >
+
+      <div class="generate-row">
+        <button class="primary" id="generateBtn"
+          onclick="generateTasks()">
+          ✦ タスク生成
+        </button>
+      </div>
+
+      <p id="message" class="message" role="status"></p>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading">
+        <h2>タスク一覧</h2>
+        <span class="counter" id="counter">0 タスク</span>
+      </div>
+
+      <div class="progress-track">
+        <div class="progress-bar" id="progressBar"></div>
+      </div>
+
+      <ul id="taskList">
+        <li class="empty">
+            現在、タスクはありません。<br>
+            AIでタスクを生成するか、手動で追加してください。
+        </li>
+      </ul>
+
+      <form class="add-row" id="addTaskForm">
+        <input
+          id="newTask"
+          type="text"
+          placeholder="タスク追加..."
+          aria-label="新しいタスク"
+        >
+        <button class="primary" type="submit">追加</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
